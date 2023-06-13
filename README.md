@@ -10,6 +10,12 @@ This is a proof of concept project. Do NOT use on networks you don't have author
 
 Connected to the RPi via SSH and PuTTY
 
+Enabled Ipv4 forwarding by setting uncommenting
+
+`net.ipv4.ip_forward = 1`
+
+in /etc/sysctl.conf
+
 installed tshark with 
 
 `sudo apt install tshark`
