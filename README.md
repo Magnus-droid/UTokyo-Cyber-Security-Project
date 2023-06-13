@@ -1,5 +1,5 @@
 # UTokyo-Cyber-Security-Project
 
-Test
+managed to download scapy with sudo apt get scapy
 
-TEST
+nnote: pip install scapy didnt work, assuming is a PATH problem
