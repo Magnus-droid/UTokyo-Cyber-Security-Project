@@ -10,7 +10,7 @@ This is a proof of concept project. Do NOT use on networks you don't have author
 
 Connected to the RPi via SSH and PuTTY
 
-Enabled Ipv4 forwarding by setting uncommenting
+Enabled Ipv4 forwarding by uncommenting
 
 `net.ipv4.ip_forward = 1`
 
