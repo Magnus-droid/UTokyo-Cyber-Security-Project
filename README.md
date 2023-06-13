@@ -4,7 +4,11 @@
 This is a proof of concept project. Do NOT use on networks you don't have authorization to monitor.
 
 
+
+
 ## notes for the project so far
+
+Connected to the RPi via SSH and PuTTY
 
 installed tshark with 
 
