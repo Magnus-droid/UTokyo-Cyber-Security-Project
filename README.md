@@ -15,7 +15,7 @@ Enabled Ipv4 forwarding by uncommenting
 `net.ipv4.ip_forward = 1`
 
 in /etc/sysctl.conf
-
+This is essential if one wishes to forward the packets. The RPi can also act as a block for any outdoing traffic (or incoming for that matter) if this settings is set to  0. This means that ARP-spoofing with this setting set to 0 essentially is a Denial of Service attack on the IoT device in question (here Arduino).
 
 installed tshark with 
 
