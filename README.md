@@ -37,3 +37,13 @@ Note: `pip install scapy` didnt work, probably a PATH problem that I don't want 
 ## What works so far:
 1) main.py to spoof ARP packets on the network and get an Arduino that is constantly pinging google.com to send its packets to the RPi instead of the default gateway of the network
 2) able to see the sent packets via tshark in another console window.
+
+
+
+## What a potential attack could look like
+
+1) The attacker looks up what devices are on the network with the command `arp -a` to determine the MAC addresses
+2) The MAC address can be used to identify the vendor on websites such as [this](https://ouilookup.com/search/B827EB127F51)
+   Alternatively tools like [Advanced IP Scanner](https://www.advanced-ip-scanner.com/) can be used.
+3) Once the attacker has identified an attackable IoT device, the RPi can be directed at the target's IP address and begin ARP-spoofing.
+4) 
