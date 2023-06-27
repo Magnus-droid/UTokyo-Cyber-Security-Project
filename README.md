@@ -6,7 +6,7 @@ This is a proof of concept project. Do NOT use on networks you don't have author
 
 
 
-## notes for the project so far
+## General notes for the project (setup etc.)
 
 Connected to the RPi via SSH and PuTTY
 
