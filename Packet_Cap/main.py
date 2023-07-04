@@ -15,7 +15,7 @@ if __name__ == "__main__":
 			time.sleep(1)
 
 	except KeyboardInterrupt:
-		print("[!] Detected CTRL+C. Restoring the network")
+		print("Stopping spoofing")
 		restore(target, host)
 		restore(host, target)
 
