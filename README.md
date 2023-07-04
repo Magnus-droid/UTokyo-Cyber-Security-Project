@@ -23,9 +23,9 @@ installed tshark with
 `sudo apt install tshark`
 
 
-basic filter for target IP address:
+basic filter for target IP address without the spam ARP messages from the spoofing:
 
-`sudo tshark -f "host [target IP]"`
+`sudo tshark -f "host [target IP] and not arp"` 
 
 
 download scapy with 
