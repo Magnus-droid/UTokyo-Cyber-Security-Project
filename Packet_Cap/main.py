@@ -4,7 +4,7 @@ from spoofer import *
 
 if __name__ == "__main__":
 
-	target = "100.64.1.69"
+	target = "100.64.1.107"
 	host = "100.64.1.1"
 	verbose = True
 

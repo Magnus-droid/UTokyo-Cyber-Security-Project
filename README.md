@@ -25,7 +25,11 @@ installed tshark with
 
 basic filter for target IP address without the spam ARP messages from the spoofing:
 
-`sudo tshark -f "host [target IP] and not arp"` 
+`sudo tshark -f "host [target IP] and not arp"`
+
+or in /Packet_Cap/sniff.py:
+
+`packets = sniff(filter="host [target IP] and not arp", prn=lambda x:x.summary())` 
 
 
 download scapy with 
@@ -42,7 +46,7 @@ Note: `pip install scapy` didnt work, probably a PATH problem that I don't want 
 ## What's left to do
 1) Find a way to remotely control the RPi from a different network (an idea could be to make it send data to - and receive instructions from a website)
 2) Alter the sniffed data in some meaningful way
-3) Automatize the setup process (automatically scan for IoT devices etc.)
+3) OS fingerprinting for to identify potential targets. Use p0f or nmap for this
 
 
 ## What a potential attack could look like
