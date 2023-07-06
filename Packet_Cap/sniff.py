@@ -1,6 +1,6 @@
 from scapy.all import *
 from scapy.layers.http import HTTPRequest
-
+"""
 def process_packet(packet):
     '''
     This function is executed whenever a packet is sniffed
@@ -19,5 +19,7 @@ def process_packet(packet):
             # then show raw
             print(f"\n[*] Some useful Raw data: {packet[Raw].load}")
 
+This is mostly to draw inspiration from, not actually in use yet
+"""
 packets=sniff(filter="host 100.64.1.107 and not arp", prn=lambda x:x.show())
 print(packets)
