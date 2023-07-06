@@ -1,0 +1,19 @@
+What to do when the RPi sucessfully sniffs packets off an Arduino?
+
+Some ideas:
+- manipulate the packets to act on behalf of the Arduino
+- scan the packets for important information (this doesn't have to be done on the Rpi)
+
+Main selling point of the RPi is that it's small and can be hidden easily
+-> It needs to be controllable remotely or there isn't much point to the entire project
+
+First idea is to make a simple Django website that the RPi dumps it's sniffed packets to (reason for Django is just that I have SOME experience with it)
+Need to find a way for the website to give instructions to the RPi effectively (seems like the Rpi would easily be able to contact the website but not vice versa)
+Maybe having the Rpi constantly polling the website for new instructions actually is feasable, depends on the computing power of the RPi
+
+
+
+For the meeting:
+
+Ask when the deadline is
+Ask if this plan is enough
