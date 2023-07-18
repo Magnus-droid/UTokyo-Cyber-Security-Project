@@ -21,5 +21,5 @@ def process_packet(packet):
 
 This is mostly to draw inspiration from, not actually in use yet
 """
-packets=sniff(filter="host 100.64.1.107 and not arp", prn=lambda x:x.show())
+packets=sniff(filter="host 100.64.1.108 and not arp", prn=lambda x:x.show())
 print(packets)

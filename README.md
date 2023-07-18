@@ -42,9 +42,10 @@ Note: `pip install scapy` didnt work, probably a PATH problem that I don't want 
 ## What works so far:
 1) main.py to spoof ARP packets on the network and get an Arduino that is constantly pinging google.com to send its packets to the RPi instead of the default gateway of the network
 2) able to see the sent packets via tshark in another console window.
+3) able to remotely acces the RPi using the `ssh -R 2222:localhost:22 magnu@[RPi-IP address]`
 
 ## What's left to do
-1) Find a way to remotely control the RPi from a different network (an idea could be to make it send data to - and receive instructions from a website)
+1) COMPLETED! Find a way to remotely control the RPi from a different network (an idea could be to make it send data to - and receive instructions from a website)
 2) Alter the sniffed data in some meaningful way
 3) OS fingerprinting for to identify potential targets. Use p0f or nmap for this
 

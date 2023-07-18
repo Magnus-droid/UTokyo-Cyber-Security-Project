@@ -4,7 +4,7 @@ from spoofer import *
 
 if __name__ == "__main__":
 
-	target = "100.64.1.107"
+	target = "100.64.1.108"
 	host = "100.64.1.1"
 	verbose = True
 
@@ -15,7 +15,7 @@ if __name__ == "__main__":
 			time.sleep(1)
 
 	except KeyboardInterrupt:
-		print("Stopping spoofing")
+		print("Restoring network")
 		restore(target, host)
 		restore(host, target)
 
