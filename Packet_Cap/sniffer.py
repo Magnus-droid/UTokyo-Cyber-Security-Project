@@ -1,9 +1,10 @@
 from scapy.all import *
+import sys
 from scapy.layers.http import HTTPRequest
 """
 def process_packet(packet):
     '''
-    This function is executed whenever a packet is sniffed
+    his function is executed whenever a packet is sniffed
     '''
     if packet.haslayer(HTTPRequest):
         # if this packet is an HTTP Request
@@ -21,5 +22,7 @@ def process_packet(packet):
 
 This is mostly to draw inspiration from, not actually in use yet
 """
-packets=sniff(filter="host 100.64.1.108 and not arp", prn=lambda x:x.show())
-print(packets)
+def readPackets(target):
+	filter = "host {} and not arp".format(target)
+	packets=sniff(filter=filter, prn=lambda x:x.summary())
+	print("\tPacket sniffing interrupted. APR spoofing might still be running.")

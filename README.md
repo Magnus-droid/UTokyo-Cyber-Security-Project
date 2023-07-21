@@ -42,13 +42,15 @@ Note: `pip install scapy` didnt work, probably a PATH problem that I don't want 
 ## What works so far:
 1) main.py to spoof ARP packets on the network and get an Arduino that is constantly pinging google.com to send its packets to the RPi instead of the default gateway of the network
 2) able to see the sent packets via tshark in another console window.
-3) able to remotely acces the RPi using the `ssh -R 2222:localhost:22 magnu@[RPi-IP address]`
+3) able to remotely acces the RPi from a different network using the `ssh [RPi-name]@[RPi-IP address]` command
+4) Able to spoof and sniff from the same terminal. `sudo python main.py [target IP] [default gateway IP]`
 
 ## What's left to do
-1) COMPLETED! Find a way to remotely control the RPi from a different network (an idea could be to make it send data to - and receive instructions from a website)
-2) Alter the sniffed data in some meaningful way
-3) OS fingerprinting for to identify potential targets. Use p0f or nmap for this
-
+1) Alter the sniffed data in some meaningful way
+2) Save captured packets in a file and send to a third party
+3) Detect ARP spoofing on the network with another RPi and design a counter measure (not implement!)
+4) Write report (Objective, who is using this attack?, Methodology, Struggles, etc.)
+5) Write the docs on github (should be similar to report)
 
 ## What a potential attack could look like
 
@@ -57,4 +59,4 @@ Note: `pip install scapy` didnt work, probably a PATH problem that I don't want 
 
    Alternatively tools like [Advanced IP Scanner](https://www.advanced-ip-scanner.com/) can be used.
 3) Once the attacker has identified an attackable IoT device, the RPi can be directed at the target's IP address and begin ARP-spoofing.
-4) The target will now start to send packets to the RPi, which can be read using tshark.
+4) The target will now start to send packets to the RPi, which can be read using scapy.

