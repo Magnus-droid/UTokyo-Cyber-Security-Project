@@ -3,7 +3,7 @@
 
 from scapy.all import Ether, ARP, srp, send
 import argparse
-import time
+from time import sleep
 import os
 import sys
 
@@ -40,4 +40,5 @@ def arpSpoof(target, host, verbose):
 	while True:
 		spoof(target, host, verbose)
 		spoof(host, target, verbose)
-		time.sleep(1)
+		sleep(1)
+

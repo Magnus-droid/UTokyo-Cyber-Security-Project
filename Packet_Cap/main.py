@@ -3,11 +3,12 @@
 from spoofer import *
 import sys
 import threading
+import pydrive
 from sniffer import readPackets
 
 def main():
 	target = sys.argv[1]
-	host = sys.argv[2]
+	host = "10.0.0.1"
 	verbose = False
 	try:
 
@@ -21,7 +22,6 @@ def main():
 		print("\tARP Spoofing interrupted. Restoring network.")
 		restore(target, host, verbose)
 		restore(host, target, verbose)
-
 
 if __name__ == "__main__":
 	main()

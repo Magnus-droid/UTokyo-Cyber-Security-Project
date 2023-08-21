@@ -1,6 +1,6 @@
 from scapy.all import *
 import sys
-from scapy.layers.http import HTTPRequest
+import datetime
 """
 def process_packet(packet):
     '''
@@ -24,5 +24,7 @@ This is mostly to draw inspiration from, not actually in use yet
 """
 def readPackets(target):
 	filter = "host {} and not arp".format(target)
-	packets=sniff(filter=filter, prn=lambda x:x.summary())
+	packets = sniff(filter=filter, prn=lambda x:x.show())
 	print("\tPacket sniffing interrupted. APR spoofing might still be running.")
+	wrpcap(str(datetime.datetime.now())+'.pcap', packets)
+
