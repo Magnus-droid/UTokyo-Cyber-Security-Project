@@ -12,8 +12,5 @@ def change_packets(source, destination, dport):
 
 while 1:
 	change_packets(sys.argv[1], sys.argv[2], sys.argv[3])
-	#r=requests.get(url="http://100.64.1.22/H")
-	#sleep(2)
-	#t=requests.get(url="http://100.64.1.22/L")
-	sleep(2)
+	sleep(3)
 
