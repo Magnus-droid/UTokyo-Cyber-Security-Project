@@ -26,5 +26,5 @@ def readPackets(target):
 	filter = "host {} and not arp".format(target)
 	packets = sniff(filter=filter, prn=lambda x:x.show())
 	print("\tPacket sniffing interrupted. APR spoofing might still be running.")
-	wrpcap(str(datetime.datetime.now())+'.pcap', packets)
+	wrpcap('/home/magnu/UTokyo-Cyber-Security-Project/Packet_Cap/SniffedFiles/'+str(datetime.datetime.now())+'.pcap', packets)
 
